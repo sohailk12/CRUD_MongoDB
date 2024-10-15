@@ -11,21 +11,18 @@ const readData = async (req,res)=>{
 
 const addData = async (req,res)=>{
     const incomingData = Array.isArray(req.body) ? req.body : [req.body];
-
     try {
-        let newData=[];
         incomingData.map(async(obj)=>{
         if(obj.name && obj.email){
-        newData = new User(obj);
+        const newData = new User(obj);
         await newData.save();
         }
     })
-     res.json(newData);
+     res.json('Success');
 
     } catch (error) {
         res.json({success:false, message:"Server Error"});
-    }
-    
+    }    
 }
 
 const updateData = (req,res)=>{
