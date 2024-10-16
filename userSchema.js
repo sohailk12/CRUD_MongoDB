@@ -2,8 +2,6 @@ import mongoose from "mongoose";
 
 //defining schema
 const Schema = mongoose.Schema;
-
-
 const userSchema = new Schema({
     //fields
     name:{
@@ -11,6 +9,10 @@ const userSchema = new Schema({
         required:true      //validator
     },
     email:{
+        type:String,
+        required:true
+    },
+    password:{
         type:String,
         required:true
     }

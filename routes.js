@@ -1,10 +1,12 @@
 import express from 'express';
 
-import { readData, addData, updateData, deleteData,errorMsg } from './controller.js';
+import { readData, addData, updateData, deleteData,errorMsg, readSingleData } from './controller.js';
 
 const router = express.Router();
 
 router.get('/',readData);
+
+router.get('/verify',readSingleData);
 
 router.post('/',addData);
 

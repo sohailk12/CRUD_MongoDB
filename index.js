@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use('/users',router);
 
-app.listen(3000,(req,res)=>{
+app.listen(3000,()=>{
     connectDB();
     console.log('server running on port:3000');
 })
